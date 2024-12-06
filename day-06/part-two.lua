@@ -131,7 +131,6 @@ for k, v in pairs(firstVisited) do
 		newGrid[k][k2].c = "#"
 		local _, hasLoop = walk(newGrid, startPos)
 		if hasLoop then
-			print(true)
 			result = result + 1
 		end
 		::cont::
