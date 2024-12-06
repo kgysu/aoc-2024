@@ -1,4 +1,5 @@
-local utils = require("../utils/utils.lua")
+package.path = package.path .. ";../?.lua"
+local utils = require("utils.utils")
 local file = io.open("input.txt", "r")
 
 if not file then
@@ -9,14 +10,12 @@ end
 local function getMiddleValue(array)
 	local length = #array
 	if length == 0 then
-		return nil -- Return nil if the array is empty
+		return nil
 	end
 
-	-- For odd length, return the middle element
 	if length % 2 == 1 then
 		return array[math.floor(length / 2) + 1]
 	else
-		-- For even length, return the lower middle element (or you can return the higher middle)
 		return array[math.floor(length / 2)]
 	end
 end
